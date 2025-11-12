@@ -7,27 +7,15 @@ using System.Threading.Tasks;
 
 namespace MohawkGame2D
 {
-    public class Bullet
+    internal class Bullet
     {
-        public Vector2 pos;
-        public Vector2 vel;
+        Vector2 pos;
+        Vector2 size;
 
-        float speed = 500f;
-
-        public void Update()
+        public Bullet(Vector2 pos, Vector2 size)
         {
-            Movement();
-            DrawBullet();
-        }
-        public void DrawBullet()
-        {
-            Draw.FillColor = Color.Gray;
-            Draw.LineSize = 2;
-            Draw.Circle(pos, 7f);
-        }
-        public void Movement()
-        {
-            pos += speed * vel * Time.DeltaTime;
+            this.pos = pos;
+            this.size = size;
         }
     }
 }
