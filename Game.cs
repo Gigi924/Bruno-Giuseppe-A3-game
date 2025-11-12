@@ -15,6 +15,25 @@ namespace MohawkGame2D
 
         Player mainPlayer = new Player(new Vector2(385, 285), new Vector2(30, 30));
 
+        
+
+        Enemy[] enemies =
+        {
+            new Enemy(new Vector2(400, 10)),
+            new Enemy(new Vector2(328, 10)),
+            new Enemy(new Vector2(129, 10)),
+            new Enemy(new Vector2(346, 10)),
+            new Enemy(new Vector2(256, 10)),
+            new Enemy(new Vector2(300, 10)),
+            new Enemy(new Vector2(100, 10)),
+            new Enemy(new Vector2(150, 10)),
+            new Enemy(new Vector2(550, 10)),
+            new Enemy(new Vector2(200, 10)),
+            new Enemy(new Vector2(60, 10)),
+            new Enemy(new Vector2(20, 10)),
+            new Enemy(new Vector2(450, 10)),
+            new Enemy(new Vector2(45, 10)),
+        };
 
         Bullet[] bullets = new Bullet[10];
         int bulletIndex = 0;
@@ -51,6 +70,10 @@ namespace MohawkGame2D
             for (int i = 0; i < bulletIndex; i++)
             {
                 bullets[i].Update();
+            }
+            for (int i = 0; i < enemies.Length; i++)
+            {
+                enemies[i].Update(bullets, mainPlayer);
             }
         }
         public void SpawnBullet()
