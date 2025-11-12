@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace gigi_a3
 {
-    internal class Player
+    public class Player
     {
-        Vector2 pos;
-        Vector2 size;
+        public Vector2 pos;
+        public Vector2 size;
         public Player(Vector2 pos, Vector2 size)
         {
             this.pos = pos;
